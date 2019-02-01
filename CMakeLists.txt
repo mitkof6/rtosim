@@ -19,6 +19,9 @@ set(RTOSIM_MAJOR_VERSION 1)
 set(RTOSIM_MINOR_VERSION 0)
 set(RTOSIM_PATCH_VERSION 0)
 
+# compilation database
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 #include GNUInstallDirs to get canonical paths
 include(GNUInstallDirs)
 
@@ -30,7 +33,7 @@ if(UNIX AND NOT CMAKE_BUILD_TYPE)
 endif()
 
 if(UNIX)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -g")
 endif(UNIX)
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
